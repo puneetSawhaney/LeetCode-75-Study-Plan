@@ -1,0 +1,32 @@
+Problem Overview:
+Given a string, the task is to reverse the vowels of the string while keeping the consonants in their original positions.
+
+Approach:
+Convert String to Char Array:
+
+Convert the input string (s) to a character array (arr) to make it mutable.
+Initialize Pointers:
+
+Initialize two pointers, li (left index) and ri (right index), pointing to the beginning and end of the string, respectively.
+Reverse Vowels in the String:
+
+Use a while loop that continues as long as li is less than ri.
+Check if both characters at li and ri are vowels using the isVowel method.
+If both are vowels, swap the characters at li and ri, and increment li and decrement ri.
+If only the character at li is a vowel, decrement ri.
+If only the character at ri is a vowel, increment li.
+If neither is a vowel, increment li and decrement ri.
+Convert Char Array to String:
+
+After the while loop, convert the modified character array back to a string.
+Vowel Checking Function:
+
+The isVowel function checks if a given character is a vowel ('a', 'e', 'i', 'o', 'u' or their uppercase versions) and returns a boolean.
+Return Result:
+
+Return the modified string with reversed vowels.
+Complexity Analysis:
+The time complexity is O(N), where N is the length of the input string. The algorithm iterates through the string once with two pointers.
+The space complexity is O(N) due to the character array.
+Summary:
+The solution effectively reverses the vowels in a string using two pointers. It checks for vowels, swaps them when both are found, and continues until the pointers meet in the middle. The result is a string with reversed vowels while maintaining the original positions of consonants. The solution is implemented using a simple and intuitive approach.

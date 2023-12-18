@@ -1,0 +1,32 @@
+
+### Problem Overview:
+Given two strings, the task is to merge them alternately, starting with the first string. For example, if the two input strings are "abc" and "123", the merged string should be "a1b2c3".
+
+### Algorithm:
+
+1. **Initialization:**
+   - Create a `StringBuilder` to store the merged result.
+   - Initialize two pointers, `i` and `j`, to keep track of the current position in both strings.
+   - Use a boolean flag (initially set to `true`) to determine which string's character to append first.
+
+2. **Merge Alternately:**
+   - Start a loop that continues until either of the input strings is exhausted.
+   - In each iteration:
+     - If the flag is `true`, append the character at the `i`-th position of the first string to the result and increment `i`.
+     - If the flag is `false`, append the character at the `j`-th position of the second string to the result and increment `j`.
+     - Toggle the flag (switch between `true` and `false`) to ensure alternating characters.
+
+3. **Append Remaining Characters:**
+   - After the loop, there might be remaining characters in one of the input strings.
+   - Append any remaining characters from the first string (`word1`) to the result.
+   - Append any remaining characters from the second string (`word2`) to the result.
+
+4. **Result:**
+   - The final result is the merged string stored in the `StringBuilder`.
+
+### Complexity Analysis:
+- The time complexity is O(N), where N is the total number of characters in both input strings. This is because each character is processed once.
+- The space complexity is O(N), as the result is stored in a `StringBuilder` that can potentially have N characters.
+
+### Summary:
+The algorithm iterates through the input strings alternately, appending characters to create the merged string. The use of pointers and a flag ensures that characters are added in the correct order. The result is a merged string containing characters from both input strings in an alternating fashion.
