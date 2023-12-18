@@ -1,0 +1,32 @@
+ Problem Overview:
+Given an array representing the number of candies each kid has and an extra amount of candies, the task is to determine if each kid can have the greatest number of candies by adding the extra candies. The result should be a list indicating whether each kid can have the maximum number of candies.
+
+### Approach:
+
+1. **Initialize Variables:**
+   - Create a list (`ans`) to store the result of whether each kid can have the most candies.
+   - Initialize a variable (`max`) to keep track of the maximum number of candies, starting with the first kid's candies.
+
+2. **Find the Maximum:**
+   - Iterate through the array of candies to find the maximum number of candies (`max`) among all kids.
+
+3. **Check Possibility:**
+   - Iterate through the array again and, for each kid:
+     - Check if adding the extra candies to the current kid's candies would make them have more candies than or equal to the maximum (`max`).
+     - Add the result (`true` or `false`) to the result list (`ans`).
+
+4. **Return Result:**
+   - The final result is the list of booleans (`ans`), indicating whether each kid can have the greatest number of candies.
+
+### Algorithm:
+1. Initialize variables (result list and max candies).
+2. Find the maximum number of candies.
+3. Check each kid's possibility of having the most candies by comparing their candies with the maximum.
+4. Return the list of results.
+
+### Complexity Analysis:
+- The time complexity is O(N), where N is the number of kids (length of the candies array). This is because the solution iterates through the array twice.
+- The space complexity is O(N), as the result is stored in a list of booleans.
+
+### Summary:
+The algorithm efficiently determines if each kid can have the greatest number of candies by iterating through the array twice. It finds the maximum number of candies first and then checks each kid's possibility of having the most candies. The result is a list of booleans indicating whether each kid can achieve the maximum number of candies.
