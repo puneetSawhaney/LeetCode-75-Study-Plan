@@ -1,0 +1,34 @@
+Problem Overview:
+Given a flowerbed represented as an array of 0s and 1s, where 0 indicates an empty plot and 1 indicates a planted flower, the task is to determine if it's possible to plant 'n' new flowers in the empty plots without violating the rule that no two flowers can be adjacent.
+
+Approach:
+Initialization:
+
+Initialize variables for tracking the maximum number of flowers that can be planted (max), the index of the first planted flower (firstIndex), and the index of the last planted flower (lastIndex).
+Iterate Through the Flowerbed:
+
+Iterate through the flowerbed array.
+If an empty plot (0) is encountered, continue to the next plot.
+If a planted flower (1) is encountered:
+If it's the first planted flower, update both firstIndex and lastIndex to the current index.
+If it's not the first planted flower, update only lastIndex to the current index.
+Handle Edge Case - No Planted Flowers:
+
+If no flowers are planted (firstIndex == -1), calculate the maximum possible flowers that can be planted by considering all empty plots.
+Calculate Maximum Flowers on Left and Right Sides:
+
+Calculate the maximum number of flowers that can be planted on the left side of the first planted flower (max = firstIndex / 2).
+Calculate the maximum number of flowers that can be planted on the right side of the last planted flower (max += (flowerbed.length - lastIndex - 1) / 2).
+Calculate Maximum Flowers in the Middle:
+
+Iterate through the indices between the first and last planted flowers.
+Count consecutive empty plots (0) and update the max accordingly.
+Check if 'n' is Less Than or Equal to 'max':
+
+Compare the total number of flowers to be planted (n) with the calculated maximum (max).
+Return whether it's possible to plant 'n' flowers without violating the adjacency rule.
+Complexity Analysis:
+The time complexity is O(N), where N is the length of the flowerbed array. This is because the algorithm iterates through the flowerbed array once.
+The space complexity is O(1), as the algorithm uses a constant amount of extra space for variables.
+Summary:
+The approach efficiently calculates the maximum number of flowers that can be planted in the flowerbed without violating the adjacency rule. It considers the left and right sides, as well as the consecutive empty plots between planted flowers. The final decision is based on whether the required number of flowers can be accommodated within the calculated maximum.
