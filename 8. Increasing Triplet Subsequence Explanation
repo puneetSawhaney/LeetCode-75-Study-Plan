@@ -1,0 +1,25 @@
+My Solution solves the "Increasing Triplet Subsequence" problem. The problem statement requires determining whether there exists a triplet of indices `(i, j, k)` such that `i < j < k` and `nums[i] < nums[j] < nums[k]` in the given array `nums`.
+
+Here's an explanation of the solution and the approach followed:
+
+1. **Initialization:**
+   - Two variables, `firstSmall` and `SecondSmall`, are initialized to `Integer.MAX_VALUE`. These variables will keep track of the smallest and second smallest elements encountered so far.
+
+2. **Iterating Through the Array:**
+   - code then iterates through the array `nums` using a `for` loop.
+   - For each element `nums[i]`, it checks the following conditions:
+
+      - If `nums[i]` is less than or equal to `firstSmall`, update `firstSmall` to `nums[i]`.
+      - If `nums[i]` is greater than `firstSmall` but less than or equal to `SecondSmall`, update `SecondSmall` to `nums[i]`.
+      - If `nums[i]` is greater than both `firstSmall` and `SecondSmall`, it means we have found a triplet (since the current element is greater than the two smallest elements), and the function returns `true`.
+
+3. **Returning the Result:**
+   - If the loop completes without finding a triplet, the function returns `false`.
+
+4. **Explanation:**
+   - The key idea behind this approach is to maintain two variables that represent the smallest and second smallest elements found so far.
+   - If, at any point, a third element greater than both `firstSmall` and `SecondSmall` is encountered, it implies the existence of an increasing triplet subsequence, and the function returns `true`.
+   - This approach relies on the fact that finding a triplet only requires keeping track of the two smallest elements. The third element is checked against these two to determine if it forms a valid increasing triplet.
+
+5. **Time Complexity:**
+   - The algorithm has a time complexity of O(n), where n is the length of the input array `nums`. This is because it makes a single pass through the array.
