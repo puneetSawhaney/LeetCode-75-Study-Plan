@@ -1,0 +1,43 @@
+My Code is a implements solution to the problem of reversing words in a string. Let me explain each part of my solution:
+
+Splitting the String:
+
+String[] words = s.trim().split(" ");
+s.trim() is used to remove leading and trailing whitespaces from the input string s.
+split(" ") is used to split the string into an array of words based on space (" ") as a delimiter. This assumes that words in the input string are separated by spaces.
+
+Reversing and Concatenating Words:
+
+StringBuilder sb = new StringBuilder();
+for (int i = words.length - 1; i >= 0; i--) {
+    if (words[i].trim().isEmpty() == false) {
+        sb.append(words[i]);
+        sb.append(" ");
+    }
+}
+A StringBuilder named sb is used to build the reversed string.
+The loop iterates through the array of words in reverse order (from words.length-1 to 0).
+For each word, if it is not empty after trimming, it is appended to the StringBuilder along with a space.
+
+Trimming and Returning the Result:
+
+return sb.toString().trim();
+The final result is obtained by converting the StringBuilder to a string using toString().
+The result is then trimmed to remove any trailing whitespace before returning.
+
+
+Explanation:
+
+This solution handles cases where there might be multiple spaces between words or leading/trailing spaces in the input string.
+It avoids appending empty words to the result, which could occur if there are consecutive spaces in the input string.
+
+Here's an example to illustrate how my code works:
+
+Solution solution = new Solution();
+String input = "  Hello   World  ";
+String output = solution.reverseWords(input);
+System.out.println(output);
+
+Output:
+
+World Hello
