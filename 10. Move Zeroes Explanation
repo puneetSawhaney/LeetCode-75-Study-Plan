@@ -1,0 +1,19 @@
+Here, My solution is an implementation of an algorithm to move all zeroes to the end of an integer array while maintaining the relative order of non-zero elements. This is a common interview question and is often used to test a candidate's ability to manipulate arrays efficiently. The algorithm used here is similar to the partition step of the quicksort algorithm.
+
+Steps I followed to solve this problem:
+
+1. The method `moveZeroes` takes an integer array `nums` as input.
+
+2. Two pointers, `i` and `j`, are initialized to 0. The pointer `j` is used to keep track of the position where the next non-zero element should be placed.
+
+3. The while loop continues until the pointer `i` reaches the end of the array.
+
+4. Inside the loop, there is a conditional statement that checks if the element at index `i` is zero. If it is zero, it means we have encountered a zero, and we simply increment the `i` pointer.
+
+5. If the element at index `i` is non-zero, we swap the elements at indices `i` and `j`. This effectively moves the non-zero element to its correct position (at the `j` index), and we increment both `i` and `j` pointers.
+
+6. The loop continues until all elements are processed.
+
+By the end of this process, all non-zero elements are placed to the left of index `j`, and all zero elements are placed to the right of index `j`. The relative order of non-zero elements is maintained.
+
+The time complexity of this algorithm is O(n), where n is the length of the input array `nums`, because each element is visited once. The space complexity is O(1), as the operations are performed in-place without using any additional space that scales with the input size.
