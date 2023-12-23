@@ -1,0 +1,17 @@
+To find the greatest common divisor (GCD) of two strings, `str1` and `str2`. The GCD of strings is defined as the longest string that divides both input strings without leaving any remainder.
+
+My solution works in following steps, I used Euclidean algorithm to solve this problem:
+
+1. The `gcdOfStrings` method takes two string inputs, `str1` and `str2`.
+
+2. The first conditional statement checks if concatenating `str1` and `str2` is equal to concatenating `str2` and `str1`. If this condition is true, it means that the two strings have a common factor.
+
+3. Inside the if block, it calculates the lengths of the two strings (`a` and `b`) and then finds the greatest common divisor (GCD) of these lengths using the `gcd` method.
+
+4. The `gcd` method implements the Euclidean algorithm to find the GCD of two integers (`a` and `b`). The while loop continues until `b % a` becomes zero. In each iteration, it calculates the remainder (`rem`) and updates the values of `a` and `b` accordingly.
+
+5. Once the GCD is found, the code returns a substring of `str1` starting from index 0 up to the length of the GCD. This substring represents the greatest common divisor of the two input strings.
+
+6. If the initial condition in step 2 is not satisfied, the method returns an empty string, indicating that there is no common divisor.
+
+Here's a brief explanation of the Euclidean algorithm used in the `gcd` method: The algorithm repeatedly replaces the larger of two numbers with the remainder of the division of the larger number by the smaller number. This process continues until the remainder becomes zero, at which point the smaller number is the GCD of the original two numbers. In this code, `a` and `b` represent the lengths of the two strings, and the algorithm is applied to find the GCD of these lengths.
