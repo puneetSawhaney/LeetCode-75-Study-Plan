@@ -1,0 +1,38 @@
+Algorithm:
+
+1. Initialize three variables:
+   - `res`: A variable to store the maximum area. It is initialized to 0.
+   - `li`: A left pointer initially pointing to the start of the `height` array.
+   - `ri`: A right pointer initially pointing to the end of the `height` array.
+
+2. Enter a `while` loop that continues as long as the left pointer (`li`) is less than the right pointer (`ri`).
+
+3. Inside the loop:
+   - Retrieve the heights of the vertical lines at positions `li` and `ri`, storing them in the variables `left` and `right`, respectively.
+   - Calculate the area formed by these two vertical lines and the distance between them using the formula `Math.min(left, right) * (ri - li)`.
+   - Update the `res` variable with the maximum of its current value and the calculated area.
+
+4. Move the pointers:
+   - If the height of the left vertical line is less than the height of the right vertical line (`left < right`), increment the left pointer (`li`).
+   - Otherwise, decrement the right pointer (`ri`).
+
+5. Repeat steps 3-4 until the left pointer surpasses the right pointer.
+
+6. Return the final result stored in the `res` variable, representing the maximum area.
+
+Explanation:
+
+- My code starts with two pointers, one at the beginning and one at the end of the array.
+- It calculates the area formed by the current pair of vertical lines and updates the `res` variable with the maximum area encountered so far.
+- The key insight is that to maximize the area, we need to consider pairs of lines that are tall and have a wide separation.
+- By moving the pointers toward each other (choosing the taller line to move), we ensure that the width decreases and only taller lines can potentially increase the area.
+
+Time Complexity:
+
+The time complexity of this algorithm is O(n), where n is the number of elements in the `height` array. This is because each pointer moves at most n times.
+
+Space Complexity:
+
+The space complexity is O(1) as the algorithm uses a constant amount of extra space regardless of the input size.
+
+In summary, the algorithm efficiently finds the maximum area by adjusting the pointers strategically to explore potentially larger areas between taller vertical lines in the histogram.
