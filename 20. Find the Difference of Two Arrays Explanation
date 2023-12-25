@@ -1,0 +1,19 @@
+My Solution defines a class `Solution` with a method `findDifference` that takes two arrays of integers (`nums1` and `nums2`) as input and returns a list containing two lists. Each list represents the elements that are present in one array but not in the other. Here's a step-by-step explanation of the code:
+
+1. **Initialize HashSet for Each Array:**
+   - Two `HashSet` objects (`set1` and `set2`) are initialized to store unique elements from `nums1` and `nums2`, respectively.
+
+2. **Populate HashSet with Elements from Arrays:**
+   - A loop iterates through each element of `nums1` and adds it to `set1`.
+   - Another loop iterates through each element of `nums2` and adds it to `set2`.
+
+3. **Find Differences in Elements:**
+   - A third `HashSet` (`ans1`) is initialized to store elements that are present in `nums1` but not in `nums2`.
+   - A loop iterates through each element of `nums1`. If the element is not present in `set2`, it is added to `ans1`.
+   - Similarly, a fourth `HashSet` (`ans2`) is initialized to store elements that are present in `nums2` but not in `nums1`.
+   - A loop iterates through each element of `nums2`. If the element is not present in `set1`, it is added to `ans2`.
+
+4. **Return the Result:**
+   - The method returns a list containing two `ArrayList` objects, each initialized with the elements from the corresponding `HashSet` (`ans1` and `ans2`).
+
+In summary, I used `HashSet` to efficiently find and store elements that are unique to each input array. It then returns a list of two lists, where each inner list represents the elements unique to one of the input arrays.
