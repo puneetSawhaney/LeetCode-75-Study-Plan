@@ -1,0 +1,21 @@
+My solution defines a class `Solution` with a method `findMaxAverage`. The method takes an array of integers `nums` and an integer `k` as input and aims to find the maximum average of any subarray of length `k`. Here's a step-by-step explanation of the code:
+
+1. **Initialization:**
+   - `avg` and `ans` are initialized to 0.0. `avg` represents the current average, and `ans` will store the final result.
+   - `sum` is initialized to 0, which will be used to keep track of the sum of the current subarray.
+
+2. **Calculate Initial Sum and Average:**
+   - A loop iterates over the first `k` elements of the array, adding their values to the `sum`.
+   - The average (`avg`) is calculated as the sum divided by `k`.
+   - `ans` is set to the initial average.
+
+3. **Sliding Window Technique:**
+   - Another loop starts from index `k` and iterates until the end of the array.
+   - In each iteration, the current element is added to `sum`, and the oldest element (at index `i - k`) is subtracted from `sum`. This simulates a sliding window of size `k` moving through the array.
+   - The average (`avg`) is updated as the new sum divided by `k`.
+   - `ans` is updated to be the maximum of its current value and the new average.
+
+4. **Return the Result:**
+   - After the loop, the method returns the maximum average (`ans`) found during the sliding window process.
+
+In summary, the solution efficiently calculates the maximum average of any subarray of length `k` using a sliding window technique.
