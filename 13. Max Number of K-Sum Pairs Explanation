@@ -1,0 +1,36 @@
+The Problem is to find the maximum number of pairs of elements in the array such that their sum equals the given value `k`. The method returns the count of such pairs.
+
+Here's a step-by-step explanation:
+
+1. Sort the array (`Arrays.sort(nums)`):
+   The first step is to sort the input array `nums` in ascending order. Sorting helps in efficiently finding pairs with a specific sum.
+
+2. **Initialize Pointers (`li` and `ri`):**
+   - `li` (left index) is initialized to 0, representing the start of the sorted array.
+   - `ri` (right index) is initialized to `nums.length - 1`, representing the end of the sorted array.
+
+3. **Use Two Pointers Approach:**
+   The method uses a two-pointers approach to iterate through the sorted array and find pairs whose sum equals `k`.
+   - While `li` is less than `ri`, the loop continues.
+   - If `nums[li] + nums[ri]` is less than `k`, it means we need a larger sum. Therefore, move the left pointer (`li`) to the right.
+   - If `nums[li] + nums[ri]` is greater than `k`, it means we need a smaller sum. Therefore, move the right pointer (`ri`) to the left.
+   - If the sum equals `k`, it means we have found a pair. Increment the `result` counter and move both pointers to explore other potential pairs.
+
+4. Return the Result:
+   The method returns the final count of pairs whose sum is equal to `k`.
+
+if (nums[li] + nums[ri] < k) {
+    li++;
+} else if (nums[li] + nums[ri] > k) {
+    ri--;
+} else {
+    li++;
+    ri--;
+    result++;
+}
+
+- If the sum is less than `k`, move the left pointer to the right (`li++`).
+- If the sum is greater than `k`, move the right pointer to the left (`ri--`).
+- If the sum is equal to `k`, increment the result, and move both pointers to explore more pairs.
+
+The final result is the count of pairs with the desired sum.
