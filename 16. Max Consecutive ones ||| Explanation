@@ -1,0 +1,24 @@
+Algorithm to find the maximum number of consecutive 1's in a binary array `nums` with the option to flip at most `k` 0's. 
+I followed sliding window approach that maintains a window of consecutive 1's and allows for flipping up to `k` 0's to maximize the length of the subarray.
+
+Here's a step-by-step explanation of the algorithm:
+
+1. Initialize variables:
+   - `maxOnes`: This variable will store the maximum length of consecutive 1's.
+   - `ZeroCount`: This variable keeps track of the number of 0's in the current window.
+   - `i`: This is the fast pointer that iterates through the array.
+   - `j`: This is the slow pointer that represents the start of the window.
+
+2. Iterate through the array using the fast pointer `i`:
+   - If `nums[i]` is 0, increment `ZeroCount` and move the fast pointer `i` forward.
+   - If `nums[i]` is 1, move the fast pointer `i` forward.
+
+3. While maintaining the window, release elements from the beginning of the window (pointed by `j`) until the number of 0's (`ZeroCount`) in the window is greater than `k`. This is done to ensure that the window can be adjusted to meet the constraint of flipping at most `k` 0's.
+
+4. Consider the current window, calculate its size (`SizeOfWindow`), and update `maxOnes` with the maximum window size encountered so far.
+
+5. Repeat steps 2-4 until the fast pointer `i` reaches the end of the array.
+
+6. Return the maximum length of consecutive 1's stored in the variable `maxOnes`.
+
+The idea behind the algorithm is to maintain a window with at most `k` 0's and maximize the length of the subarray containing consecutive 1's. The slow pointer `j` is adjusted to release elements from the window when the number of 0's exceeds the allowed limit (`k`). The maximum length of the window encountered during the iteration is the result.
