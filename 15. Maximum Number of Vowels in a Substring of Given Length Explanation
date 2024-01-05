@@ -1,0 +1,24 @@
+Problem asks for finding the maximum number of vowel letters in any substring of length k in a given string s. The approach I used to solve this problem is based on sliding window technique.
+
+Here's a step-by-step explanation of the approach:
+
+1. Initialize Variables:
+   - Initialize `ans` and `count` variables to keep track of the maximum count of vowels in a substring and the current count of vowels in the current window, respectively.
+
+2. Calculate Initial Vowel Count in First Window:
+   - Use a for loop to iterate over the first k characters of the string. Inside the loop, check if each character is a vowel using the `isVowel` function and increment the `count` if it is.
+
+3. Update Maximum Vowel Count:
+   - Set `ans` to the value of `count`. This initializes the maximum count with the count of vowels in the first window.
+
+4. Sliding Window:
+   - Use another for loop to iterate from the (k+1)th character to the end of the string.
+   - Inside this loop:
+     - If the current character is a vowel, increment the `count`.
+     - If the character at the position `i - k` (i.e., the first character in the current window) is a vowel, decrement the `count`. This step simulates releasing the first element of the window.
+     - Update `ans` by taking the maximum of the current `ans` and the updated `count`. This is done to keep track of the maximum count of vowels in any substring.
+
+5. Return Result:
+   - After the loop, return the final value of `ans` as the result.
+
+The time complexity of this solution is O(N), where N is the length of the input string s. This is because we iterate through the string only once. The space complexity is O(1) as we use a constant amount of extra space regardless of the input size.
