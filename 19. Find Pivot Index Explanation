@@ -1,0 +1,23 @@
+To find the pivot index in an array, where the pivot index is defined as the index where the sum of all elements to the left is equal to the sum of all elements to the right. The approach I used in the code involves creating an auxiliary array `pre` to store prefix sums.
+
+Here's the step-by-step explanation of the approach:
+
+1. **Initialize Variables:**
+   - Create an array `pre` of the same length as the input array `nums` to store the prefix sums.
+   - Initialize a variable `sum` to keep track of the total sum of the elements in the array.
+
+2. **Calculate Prefix Sums:**
+   - Use a for loop to iterate through the elements of the `nums` array.
+   - Inside the loop:
+     - Update the `sum` by adding the current element.
+     - Set the value of `pre[i]` to the sum of elements from `nums[0]` to `nums[i-1]`. This effectively calculates the prefix sum for each index `i`.
+
+3. **Find Pivot Index:**
+   - Use another for loop to iterate through each index of the `nums` array.
+   - Inside this loop, check if the sum of elements to the left of the current index (`pre[i]`) is equal to the sum of elements to the right of the current index (`sum - nums[i] - pre[i]`).
+   - If the condition is met, return the current index as the pivot index.
+
+4. **Return Result:**
+   - If no pivot index is found during the loop, return -1.
+
+The time complexity of this solution is O(N), where N is the length of the input array `nums`. This is because the code iterates through the array twice, and each iteration takes linear time. The space complexity is O(N) as well, as an additional array `pre` of the same length as `nums` is used.
