@@ -1,0 +1,27 @@
+**Approach:**
+
+1. **Data Structure:** The code uses a Queue (implemented as LinkedList) named `Request` to store timestamps of recent requests.
+
+2. **Initialization:** In the constructor `RecentCounter()`, the Queue is initialized.
+
+3. **Ping Operation:**
+   - In the `ping` method, a new request timestamp `t` is added to the Queue.
+   - A while loop is used to remove requests from the front of the Queue that fall outside the time frame of the last 3000 milliseconds.
+   - The method then returns the size of the updated Queue, representing the number of requests within the last 3000 milliseconds (inclusive of the new request).
+
+**Code Explanation:**
+
+- **Queue Usage:** A Queue is chosen to maintain a chronological order of requests.
+
+- **Initialization:** In the constructor, the Queue `Request` is initialized as an empty LinkedList.
+
+- **Ping Method:**
+   - A new request timestamp `t` is added to the Queue using `Request.add(t)`.
+   - The while loop removes requests from the front of the Queue (`Request.poll()`) until the remaining requests fall within the time frame of the last 3000 milliseconds.
+   - The size of the updated Queue (`Request.size()`) is returned, indicating the number of requests within the last 3000 milliseconds.
+
+**Time Complexity:**
+   - The time complexity of the `ping` method is O(k), where k is the number of requests outside the time frame that need to be removed. In the worst case, it could be the size of the Queue.
+
+**Space Complexity:**
+   - The space complexity is O(n), where n is the number of requests stored in the Queue. The Queue stores timestamps of recent requests.
