@@ -1,0 +1,29 @@
+Approach:
+Data Structure: The solution utilizes a StringBuilder to efficiently handle modifications of the string during the process.
+
+Iteration: It iterates through each character of the input string.
+
+Handling Stars:
+
+If the current character is a star, the code removes the closest non-star character to its left. This is achieved by deleting the last character in the StringBuilder.
+If the current character is not a star, it appends the character to the StringBuilder.
+Result: After processing all characters, the final result is obtained by converting the StringBuilder to a regular string.
+
+Explanation:
+StringBuilder Usage:
+
+StringBuilder is chosen over string concatenation for efficiency since strings in Java are immutable.
+Iteration through String:
+
+The code uses a loop to go through each character in the input string.
+Star Removal:
+
+If a star is encountered, it identifies and removes the closest non-star character to its left.
+If the character is not a star, it appends the character to the StringBuilder.
+Final Result:
+
+After processing all characters, the modified string is obtained from the StringBuilder.
+Time Complexity:
+The time complexity is O(n), where n is the length of the input string. The algorithm iterates through each character exactly once.
+Space Complexity:
+The space complexity is O(n). The StringBuilder stores the modified string, and its length can be at most n in the worst case.
