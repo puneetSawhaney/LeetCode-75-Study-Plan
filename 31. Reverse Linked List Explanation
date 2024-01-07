@@ -1,0 +1,17 @@
+Appraoch:
+1. **Pointer Initialization:**
+   - Two pointers are initialized - `prev` and `current`.
+   - `prev` will eventually point to the new head of the reversed list.
+   - `current` starts at the original head of the list.
+
+2. **Reverse the List using Iteration:**
+   - A `while` loop is used to iterate through the list until the end (`current` becomes `null`).
+   - Inside the loop:
+     - A temporary pointer `next` is used to store the next node in the original list.
+     - The `next` reference of the `current` node is modified to point to the `prev` node, effectively reversing the link direction.
+     - `prev` is moved to the `current` node, and `current` is moved to the next node.
+
+3. **Return the Reversed List:**
+   - The method returns the new head of the reversed list, which is now the node that was originally at the end of the list.
+
+The overall approach involves iterating through the original list and reversing the direction of links between nodes. The `prev` pointer keeps track of the reversed portion of the list. The time complexity of this algorithm is O(n), where n is the number of nodes in the linked list, as each node is visited once during the reversal process.
