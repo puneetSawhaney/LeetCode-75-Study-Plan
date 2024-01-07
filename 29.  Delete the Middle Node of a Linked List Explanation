@@ -1,0 +1,22 @@
+Approach:
+1. **Base Case Check:**
+   - The method first checks if the linked list is empty or has only one node.
+   - If it is, there is no middle node to delete, and the method returns `null`.
+
+2. **Initialize Pointers:**
+   - Two pointers, `slow` and `fast`, are initialized.
+   - `slow` moves one node at a time, and `fast` moves two nodes at a time.
+
+3. **Find the Middle Node:**
+   - The method uses a loop to iterate through the list until the `fast` pointer reaches the end or the second-to-last node.
+   - At each iteration, `slow` advances by one node, and `fast` advances by two nodes.
+   - When the loop exits, the `slow` pointer is at the middle node.
+
+4. **Delete the Middle Node:**
+   - The middle node is skipped by updating the `next` reference of the node before it to point to the node after it.
+   - This effectively removes the middle node from the linked list.
+
+5. **Return the Updated Head:**
+   - The method returns the head of the linked list after removing the middle node.
+
+The algorithm uses a two-pointer approach to find and delete the middle node efficiently. The time complexity is O(n), where n is the number of nodes in the linked list.
