@@ -1,0 +1,14 @@
+Approach:
+1. **Base Case Check:**
+   - If the current node (root) is null, return 0. This handles the case where there are no nodes in the current subtree, and its depth is considered 0.
+
+2. **Recursion for Left and Right Subtrees:**
+   - Recursively call the `maxDepth` function for the left and right subtrees of the current node.
+   - Store the results in variables (`left` and `right`), representing the depths of the left and right subtrees.
+
+3. **Depth Calculation:**
+   - Calculate the depth of the current subtree as the maximum of the depths of its left and right subtrees (`Math.max(left, right)`).
+   - Add 1 to the maximum depth to account for the current root node.
+   - Return this calculated depth.
+
+The approach essentially involves exploring the tree in a depth-first manner. For each node, it computes the depth of its left and right subtrees and then determines its own depth based on the maximum depth among its children, plus 1. This process continues recursively until the base case is reached (null node), and the depth information is propagated back up the recursive calls. The final result is the maximum depth of the entire binary tree.
