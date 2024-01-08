@@ -1,0 +1,22 @@
+My solution defines a solution for determining whether the leaf sequences of two binary trees, `root1` and `root2`, are similar. The approach involves traversing both trees to collect their leaf nodes in lists and then comparing the lists for similarity.
+
+approach followed:
+
+1. **Leaf Node Collection:**
+   - Two lists, `list1` and `list2`, are created to store the leaf nodes of `root1` and `root2`, respectively.
+
+2. **Leaf Node Extraction Function:**
+   - The `getLeafs` function is defined to recursively traverse a binary tree (`TreeNode`).
+   - If the current node is not null:
+     - If both the left and right child nodes of the current node are null, it means the current node is a leaf node.
+     - The value of the leaf node is added to the corresponding list (`list`).
+     - Recursively call the `getLeafs` function for the left and right child nodes to continue traversing the tree.
+
+3. **Leaf Node Extraction for Both Trees:**
+   - The `getLeafs` function is called for both `root1` and `root2`, populating `list1` and `list2` with the leaf nodes of each tree.
+
+4. **Comparison of Leaf Sequences:**
+   - The two lists (`list1` and `list2`) containing leaf nodes are compared using the `equals` method.
+   - If the lists are equal, it means the leaf sequences of the two trees are similar.
+
+The main idea is to extract the leaf nodes of each tree and then compare the sequences. This approach leverages the fact that the order of leaf nodes in a binary tree's traversal from left to right corresponds to the order in which the leaves appear in a sequence. If the leaf sequences of both trees are the same, the trees are considered to have similar leaf structures.
