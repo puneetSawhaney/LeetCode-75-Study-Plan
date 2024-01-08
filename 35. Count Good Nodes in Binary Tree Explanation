@@ -1,0 +1,25 @@
+Counting the number of "good nodes" in a binary tree. A "good node" is defined as a node in the binary tree where the value of the node is greater than or equal to the maximum value along the path from the root to that node. 
+My followed approach to solve this problem:
+
+1. **Global Variable:**
+   - The code uses a global variable `good` to keep track of the count of good nodes throughout the recursion.
+
+2. **Initialization:**
+   - The `goodNodes` method is the entry point. It initializes the global variable `good` to 0 and then calls the recursive function `calGoodNodes` with the root of the binary tree and an initial maximum value of `Integer.MIN_VALUE`.
+
+3. **Recursive Function (`calGoodNodes`):**
+   - This function takes two parameters - the current node (`root`) and the maximum value along the path to this node (`max`).
+   - If the current node is not null:
+     - It checks if the value of the current node is greater than or equal to the maximum value (`max`).
+     - If the above condition is true, it increments the `good` count.
+     - It then updates the maximum value to be the greater of the current maximum and the value of the current node (`max = Math.max(max, root.val)`).
+     - Recursively calls itself for both the left and right subtrees of the current node.
+
+4. **Recursion Process:**
+   - The recursion continues until it reaches the leaf nodes of the binary tree.
+   - During this process, the count of good nodes is updated based on whether each node qualifies as a "good node" according to the defined criteria.
+
+5. **Result:**
+   - The final result is the count of good nodes in the entire binary tree, which is stored in the global variable `good`.
+
+I used a recursive depth-first traversal of the binary tree to identify and count the "good nodes" based on the defined criteria. The global variable is used to maintain the count across recursive calls.
