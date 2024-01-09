@@ -1,0 +1,17 @@
+Provided a method `searchBST` that searches for a specific value (`val`) in a binary search tree (BST). The binary tree nodes are defined using a class named `TreeNode`.
+
+The `TreeNode` class has three fields: `val` (the value of the node), `left` (a reference to the left child node), and `right` (a reference to the right child node). There are three constructors for creating instances of `TreeNode` with different combinations of parameters.
+
+The `searchBST` method takes two parameters - a `TreeNode` representing the root of the binary search tree and an integer `val` to search for. The method uses a while loop to iterate through the tree starting from the root.
+
+Inside the loop, the code checks if the current node's value is equal to the target value (`val`). If it is, the method returns the current node, indicating that the value has been found in the BST.
+
+If the current node's value is less than the target value, the code moves to the right subtree (`root = root.right`), as in a BST, all values in the right subtree are greater than the current node's value.
+
+If the current node's value is greater than the target value, the code moves to the left subtree (`root = root.left`), as all values in the left subtree are smaller than the current node's value.
+
+The loop continues until either the target value is found, or the current node becomes `null`, indicating that the value is not present in the BST.
+
+Finally, if the target value is not found in the entire BST, the method returns `null`.
+
+In summary, the `searchBST` method performs an iterative search in a binary search tree to find a specific value and returns the corresponding node if found or `null` if not found.
